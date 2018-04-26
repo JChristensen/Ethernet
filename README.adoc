@@ -1,3 +1,51 @@
+= W5100/W5200 Ethernet Library for Arduino =
+
+This is a modified version of the Arduino Ethernet library
+from version 1.8.5 that supports both the WIZnet W5100 and W5200 (e.g. WIZ820io module) chips.
+
+WIZnet previously (ca. Arduino 1.0.5) published modified w5100.h and w5100.cpp files to support
+the W5200 https://github.com/Wiznet/W5200_Arduino_Ethernet_Lib[here]
+but these are now incompatible with the Arduino 1.8.5 Ethernet library.
+
+Using the WIZnet w5100.h and w5100.cpp files, patches were extracted and
+adjusted for Arduino 1.8.5. A change was also made to support the
+ATmega1284/P and ATmega644/A/P/PA microcontrollers.
+
+== Installation ==
+
+This repo contains branches for the W5100 and W5200 chips.
+Recommended installation is to clone the repository into the sketchbook/libraries directory.
+This will preserve the original Ethernet library installed with the
+Arduino IDE but the one in sketchbook/libraries will take precedence when
+compiling sketches. To revert back to the standard library, simply delete
+the Ethernet directory under sketchbook/libraries.
+
+To clone the repo from the command line, change to the sketchbook/libraries
+directory and issue the command:
+[source]
+----
+git clone https://github.com/JChristensen/Ethernet
+----
+
+To switch between branches:
+[source]
+----
+git checkout w5100
+git checkout w5200
+git checkout master  # for the original library from Arduino 1.8.5
+----
+
+Branches can be switched even while the Arduino IDE is running; restarting
+the IDE is not necessary. The next compile will use the selected branch.
+
+Check the active branch with:
+[source]
+----
+git branch
+----
+
+==== Contents of the original README.adoc file follows. ====
+
 = Ethernet Library for Arduino =
 
 With the Arduino Ethernet Shield, this library allows an Arduino board to connect to the internet.
